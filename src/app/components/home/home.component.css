@@ -1,0 +1,45 @@
+.infoGral,
+.servicios {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.infoGral,
+.servicios h2 {
+    font-size: 2rem;
+    font-family: 'Antic Slab', serif;
+    text-align: center;
+    color: black;
+}
+
+.infoGral h4 {
+    font-size: 1rem;
+    font-family: 'Old Standard TT', serif;
+    text-align: center;
+    color: grey;
+}
+
+.infoGral p {
+    font-size: 1rem;
+    font-family: 'Saira Condensed', sans-serif;
+    text-align: justify;
+    color: #404447;
+}
+
+.infoGral,
+.servicios .icono {
+    font-size: 5rem;
+    color: #58ACFA;
+}
+
+.servicios p {
+    font-size: 1rem;
+    font-family: 'Saira Condensed', sans-serif;
+    text-align: justify;
+    color: #404447;
+}
+
+.servicios .centro {
+    text-align: center;
+}

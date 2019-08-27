@@ -1,0 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.principal {
+    width: 100%;
+    display: flex;
+}
+
+.scroll {
+    width: auto;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
