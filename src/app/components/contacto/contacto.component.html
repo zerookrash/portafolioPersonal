@@ -1,27 +1,101 @@
       
         <div class="container mt-5 animated fadeInDown">
           <h2 class="titulo">Formulario de Contacto</h2>
-          <form (ngSubmit)="contactForm(form.value); form.reset()" #form="ngForm" >
-            <div class="form-group">
-              <label>Nombre</label>
-              <input type="text" class="form-control" name="nombre" required ngModel>
-            </div>
+          <form [formGroup]="contactForm" (submit)="envio()">
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <input type="text" formControlName="name" placeholder="Nombre(s)">
+
+                <div class="alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                  <ng-template [ngIf]="name.errors.required">
+                    <div class="message">
+                      Nombre es requerido.
+                    </div>
+                  </ng-template>
+
+                    <ng-template [ngIf]="name.errors.minLength">
+                    <div class="message">
+                      Debera tener almenos 5 caracteres.
+                    </div>
+                  </ng-template>
+                  </div>
+
+              </div>
+              <div class="col-12 col-md-6">
+                <input type="text" formControlName="last" placeholder="Apellidos">
+
+                <div class="alert-danger" *ngIf="last.invalid && (last.dirty || last.touched)">
+                    <ng-template [ngIf]="last.errors.required">
+                      <div class="message">
+                        Nombre es requerido.
+                      </div>
+                    </ng-template>
   
-            <div class="form-group">
-              <label>Asunto</label>
-              <input type="text" class="form-control" name="asunto" required ngModel>
+                      <ng-template [ngIf]="last.errors.minLength">
+                      <div class="message">
+                        Debera tener almenos 5 caracteres.
+                      </div>
+                    </ng-template>
+                    </div>
+
+
+              </div>
             </div>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <input type="text" formControlName="subject" placeholder="Asunto">
+
+
+                <div class="alert-danger" *ngIf="subject.invalid && (subject.dirty || subject.touched)">
+                    <ng-template [ngIf]="subject.errors.required">
+                      <div class="message">
+                        Nombre es requerido.
+                      </div>
+                    </ng-template>
   
-            <div class="form-group">
-              <label>Correo</label>
-              <input type="email" class="form-control" name="email" required ngModel>
+                      <ng-template [ngIf]="subject.errors.minLength">
+                      <div class="message">
+                        Debera tener almenos 5 caracteres.
+                      </div>
+                    </ng-template>
+                    </div>
+
+
+
+              </div>
+              <div class="col-12 col-md-6">
+                  <input type="email" formControlName="email" placeholder="Correo Eléctronico">
+
+
+                 
+
+
+                </div>
             </div>
+            <div class="row">
+              <div class="col-12">
+                <textarea formControlName="message" placeholder="Mensaje" id="" cols="30" rows="10"></textarea>
+
+
+                <div class="alert-danger" *ngIf="message.invalid && (message.dirty || message.touched)">
+                    <ng-template [ngIf]="message.errors.minLength">
+                      <div class="message">
+                        Minimo debera tener 10 caracteres.
+                      </div>
+                    </ng-template>
   
-            <div class="form-group">
-              <label>Mensaje</label>
-              <textarea class="form-control" cols="30" rows="6" name="mensaje" ngModel></textarea>
+                      <ng-template [ngIf]="message.errors.maxLength">
+                      <div class="message">
+                        LLego al maximo de caracteres.
+                      </div>
+                    </ng-template>
+                    </div>
+
+
+              </div>
             </div>
-  
-            <button type="submit" class="btn btn-outline btn-block">Enviar</button>
+            <div class="row">
+              <button type="submit" class="btn btn-outline-success btn-block">Enviar</button>
+            </div>
           </form>
         </div>
