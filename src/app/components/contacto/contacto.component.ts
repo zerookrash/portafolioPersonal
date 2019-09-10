@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService } from '../../services/message.service';
-import Swal from 'sweetalert2';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+// Sweet Alert
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -12,38 +13,44 @@ import Swal from 'sweetalert2';
 })
 export class ContactoComponent implements OnInit {
 
-  // tslint:disable-next-line: max-line-length
-  emailPattern: any = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+  emailPattern: any = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/;
 
+  createFormGroup() {
+    return new FormGroup({
+      name: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      last: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      email: new FormControl('', [Validators.required, Validators.minLength(5), Validators.pattern(this.emailPattern)]),
+      subject: new FormControl('', [Validators.required, Validators.minLength(5)]),
+      message: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(100)])
+    });
+  }
 
-  contactForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    last: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    email: new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
-    subject: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    message: new FormControl('', [Validators.minLength(10), Validators.maxLength(250)])
-  });
+  contactForm: FormGroup;
+  titularAlerta = '';
 
-
-  constructor(public messageService: MessageService) {}
+  constructor( private dbData: MessageService ) {
+    this.contactForm = this.createFormGroup();
+  }
 
   ngOnInit() {}
 
-
-  envio() {
-    if (this.contactForm.valid) {
-      console.log(this.contactForm);
-    } else {
-      console.log('No valido!')
-    }
+  onResetForm() {
+    this.contactForm.reset();
   }
 
+  onSaveForm() {
+    if (this.contactForm.valid) {
+      this.dbData.sendMessage(this.contactForm.value);
+      this.onResetForm();
+      Swal.fire(`Mensaje Envieado con exíto`, this.titularAlerta, 'success');
+    } else {
+      Swal.fire(`Error!!`, this.titularAlerta, 'error');
+    }
+  }
 
   get name() { return this.contactForm.get('name'); }
   get last() { return this.contactForm.get('last'); }
   get email() { return this.contactForm.get('email'); }
   get subject() { return this.contactForm.get('subject'); }
   get message() { return this.contactForm.get('message'); }
-
-
 }
