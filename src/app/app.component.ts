@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-// facebook module
-import { FacebookService, InitParams } from 'ngx-facebook';
+
 
 @Component({
   selector: 'app-root',
@@ -9,15 +8,11 @@ import { FacebookService, InitParams } from 'ngx-facebook';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  constructor(private facebookService: FacebookService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.initFacebookService();
-  }
 
-  private initFacebookService(): void {
-    console.log('Entro')
-    const initParams: InitParams = { xfbml: true, version: 'v3.2' };
-    this.facebookService.init(initParams);
-}
+
+  ngOnInit() {}
+  
+
 }
