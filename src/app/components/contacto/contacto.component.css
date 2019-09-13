@@ -55,3 +55,23 @@
   .container-error-message {
     padding: 3px;
   }
+
+  .texto {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  hr {
+    border: 1px solid lightslategrey;
+  }
+
+  .messanger {
+    width: 100%;
+    margin: 2rem auto; 
+    display: block; 
+  }
+
+  iframe {
+    margin: 0 auto;
+    display: block;
+  }

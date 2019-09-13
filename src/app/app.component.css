@@ -1,16 +1,17 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 .principal {
-    width: 100%;
-    display: flex;
+    overflow: hidden;
 }
 
-.scroll {
+img {
+    height: 90%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+}
+
+#scroll {
     width: auto;
-    height: 100vh;
+    height: 100%;
     overflow-y: auto;
 }
 
