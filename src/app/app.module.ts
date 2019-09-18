@@ -16,6 +16,7 @@ import { ContactoComponent } from './components/contacto/contacto.component';
 import { ImgComponent } from './components/img/img.component';
 import { PortafolioComponent } from './components/portafolio/portafolio.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
+import { EstudiosComponent } from './components/estudios/estudios.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TimelineComponent } from './components/timeline/timeline.component';
     ContactoComponent,
     ImgComponent,
     PortafolioComponent,
-    TimelineComponent
+    TimelineComponent,
+    EstudiosComponent
   ],
   imports: [
     BrowserModule,

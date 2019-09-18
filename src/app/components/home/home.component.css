@@ -13,6 +13,11 @@
     color: black;
 }
 
+h2 {
+    background-color: rgb(243, 156, 18);
+    color: black;
+}
+
 .infoGral h4 {
     font-size: 1rem;
     font-family: 'Old Standard TT', serif;
@@ -24,7 +29,7 @@
     font-size: 1rem;
     font-family: 'Saira Condensed', sans-serif;
     text-align: justify;
-    color: #404447;
+    color: #ffffff;
 }
 
 .infoGral,
@@ -37,7 +42,7 @@
     font-size: 1rem;
     font-family: 'Saira Condensed', sans-serif;
     text-align: justify;
-    color: #404447;
+    color: #ffffff;
 }
 
 .servicios .centro {
@@ -50,4 +55,156 @@ img {
 
 .img2 {
     width: 20%;
+}
+
+a {
+    color: #ffffff;
+}
+
+/* Skillset */
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.single-wrapper {
+    width: 100%;
+    background-color: lightgrey;
+    border-radius: 10px; 
+    box-shadow: 0 0 5px #404447;
+}
+
+.skills-area {
+    text-align: center;
+    padding-right: 30px;
+    line-height: 30px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+p {
+    margin: 0;
+    color: #ffffff;
+}
+
+#html {
+    width: 90%;
+    background-color: rgb(175, 122, 197);
+    animation: html 3s;
+}
+
+#js {
+    width: 65%;
+    background-color: rgb(84, 153, 199);
+    animation: js 3s;
+}
+
+#ng {
+    width: 70%;
+    background-color: rgb(72, 201, 176);
+    animation: ng 3s;
+}
+
+#bt4 {
+    width: 70%;
+    background-color: rgb(39, 174, 96);
+    animation: bt4 3s;
+}
+
+#njs {
+    width: 50%;
+    background-color: rgb(241, 196, 15);
+    animation: njs 3s;
+}
+
+#gql {
+    width: 30%;
+    background-color: rgb(243, 156, 18);
+    animation: gql 3s;
+}
+
+#mdb {
+    width: 50%;
+    background-color: rgb(211, 84, 0);
+    animation: mdb 3s;
+}
+
+#fxbx {
+    width: 20%;
+    background-color: rgb(23, 165, 137);
+    animation: fxbx 3s;
+}
+
+@keyframes html {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 90%;
+    }
+}
+
+@keyframes js {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 65%;
+    }
+}
+
+@keyframes ng {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes bt4 {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 70%;
+    }
+}
+
+@keyframes njs {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes gql {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 30%;
+    }
+}
+
+@keyframes mdb {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 50%;
+    }
+}
+
+@keyframes fxbx {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 20%;
+    }
 }
